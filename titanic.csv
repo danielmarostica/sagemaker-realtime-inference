@@ -1,0 +1,6 @@
+aws sagemaker-runtime invoke-endpoint \
+  --endpoint-name inference-pipeline-ep-titanic-2021-12-07-00-53-33 \
+  --body 'Age,Embarked,Fare,Parch,Pclass,Sex,SibSp,Family_Size\n22.0,S,7.25,0,3,male,1,1' \
+  --content-type text/csv \
+  --accept text/csv \
+  results
