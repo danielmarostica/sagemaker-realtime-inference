@@ -68,8 +68,8 @@ def predict_fn(input_data, model):
     '''
     features = model.transform(input_data)
 
-    # Return the label (as the first column) and the set of features.
-    try:
+    
+    try: # try to return the target column as the first one along with the remaining features (for training). If it receives an inference payload, without target, this will not be done (of course).
         return np.insert(features, 0, input_data['Survived'], axis=1)  
     except:
         return features    
